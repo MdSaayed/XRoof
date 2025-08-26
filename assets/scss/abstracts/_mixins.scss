@@ -1,0 +1,37 @@
+@use 'variables' as vars;
+
+// H1 heading mixin
+@mixin heading-h1 {
+  font-family: vars.$font-heading;
+  font-size: clamp(48px, 5vw, 80px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.8px;
+  color: vars.$color-white;
+}
+
+
+// Heading XL
+@mixin heading-xl {
+  font-family: vars.$font-heading;
+  font-weight: 500;
+  font-style: normal;
+  line-height: vars.$heading-xl-line;
+  letter-spacing: vars.$heading-xl-letter;
+
+  // Responsive font size
+  font-size: clamp(32px, 4vw, vars.$heading-xl);
+}
+
+// Paragraph / Body Text
+@mixin body-text {
+  font-family: vars.$font-primary;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: vars.$line-height-body;
+  letter-spacing: vars.$letter-spacing-body;
+  color: vars.$color-black;
+  text-align: center; // optional, can override
+}

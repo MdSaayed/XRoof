@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as vars;
+
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color: vars.$color-white;
+}
+
+.bg-primary {
+  background-color: vars.$color-primary;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}

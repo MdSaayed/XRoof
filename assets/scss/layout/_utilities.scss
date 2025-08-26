@@ -1,0 +1,82 @@
+@use '../abstracts/spacing' as sp;
+
+// Map for spacing
+$spaces: (
+  0: sp.$space-0,
+  1: sp.$space-1,
+  2: sp.$space-2,
+  3: sp.$space-3,
+  4: sp.$space-4,
+  5: sp.$space-5,
+  6: sp.$space-6,
+  7: sp.$space-7,
+  8: sp.$space-8,
+  9: sp.$space-9,
+  10: sp.$space-10
+);
+
+@each $i, $val in $spaces {
+  .m-#{$i} {
+    margin: $val;
+  }
+
+  .mt-#{$i} {
+    margin-top: $val;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $val;
+  }
+
+  .ml-#{$i} {
+    margin-left: $val;
+  }
+
+  .mr-#{$i} {
+    margin-right: $val;
+  }
+
+  .p-#{$i} {
+    padding: $val;
+  }
+
+  .pt-#{$i} {
+    padding-top: $val;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $val;
+  }
+
+  .pl-#{$i} {
+    padding-left: $val;
+  }
+
+  .pr-#{$i} {
+    padding-right: $val;
+  }
+
+  .px-#{$i} {
+    padding-left: $val;
+    padding-right: $val;
+  }
+
+  .py-#{$i} {
+    padding-top: $val;
+    padding-bottom: $val;
+  }
+}
+
+@for $i from 1 through 15 {
+  .gap-#{$i} {
+    gap: $i * 4px;
+  }
+
+  .gap-x-#{$i} {
+    column-gap: $i * 4px;
+  }
+
+  .gap-y-#{$i} {
+    row-gap: $i * 4px;
+  }
+}
