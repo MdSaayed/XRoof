@@ -1,42 +1,49 @@
-@use '../abstracts/variables' as vars;
-@use '../layout/breakpoints' as bp;
+@use '../abstracts/variables' as *;  
+@use '../layout/breakpoints' as *;
 
 .container {
   width: 100%;
-  max-width: 100%;
+  max-width: $xxl;  
   margin: 0 auto;
-  padding: vars.$container-padding-mobile;
+  padding: $container-padding-mobile; // Mobile first
 
-  @media (min-width: bp.$breakpoint-sm) {
-    padding: vars.$container-padding-sm;
+  // Small screens
+  @media (min-width: $sm) {
+    padding: $container-padding-sm;
   }
 
-  @media (min-width: bp.$breakpoint-md) {
-    padding: vars.$container-padding-md;
+  // Medium screens
+  @media (min-width: $md) {
+    padding: $container-padding-md;
   }
 
-  @media (min-width: bp.$breakpoint-lg) {
-    padding: vars.$container-padding-lg;
+  // Large screens
+  @media (min-width: $lg) {
+    padding: $container-padding-lg;
   }
 
-  @media (min-width: bp.$breakpoint-xl) {
-    padding: vars.$container-padding-xl;
+  // Extra Large screens
+  @media (min-width: $xl) {
+    padding: $container-padding-xl;
   }
 
-  @media (min-width: bp.$breakpoint-2xl) {
-    padding: vars.$container-padding-2xl;
+  // 2XL screens
+  @media (min-width: $x2l) {
+    padding: $container-padding-2xl; 
   }
 
-  @media (min-width: bp.$breakpoint-3xl) {
-    padding: vars.$container-padding-3xl;
+  // 3XL screens
+  @media (min-width: $x3l) {
+    padding: $container-padding-3xl;
   }
 
-  @media (min-width: bp.$breakpoint-4xl) {
-    padding: vars.$container-padding-4xl;
+  // 4XL screens
+  @media (min-width: $x4l) {
+    padding: $container-padding-4xl;
   }
 
-  @media (min-width: bp.$breakpoint-xxl) {
-    padding: vars.$container-padding-xxl;
-    max-width: bp.$breakpoint-xxl;
+  // Max container width 1920px
+  @media (min-width: $xxl) {
+    padding: $container-padding-xxl;
   }
 }

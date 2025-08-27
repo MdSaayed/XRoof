@@ -1,11 +1,18 @@
-@use 'abstracts/variables' as vars;
-@use 'abstracts/fonts';
-@use 'layout/utilities' as spacing;
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-@use 'base/reset';
-@use 'base/typography';
-@use 'base/utilities';
-@use 'layout/container';
-@use 'layout/header';
-@use 'layout/footer';
+// Abstracts
+@use './abstracts/variables' as vars;
+@use './abstracts/fonts';
+@use './abstracts/mixins' as *;
+
+@use './layout/utilities' as spacing;
+
+@use './base/reset';
+@use './base/typography';
+@use './base/utilities';
+
+@use "./components/index";  
+@use './layout/container';
+@use './layout/header';
+@use'./layout/hero'; 
+@use'./layout/about';
+@use './layout/footer';  
+// sass scss/main.scss assets/css/main.css --watch

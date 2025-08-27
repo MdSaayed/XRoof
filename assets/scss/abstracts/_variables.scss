@@ -4,27 +4,34 @@ $font-heading: 'Outfit', sans-serif;
 
 // Colors
 $color-white: #ffffff;
-$color-dark: #111111;
 $color-primary: #EE212B;
 $color-black: #000;
 $color-dark: #0F0E0E;
+$color-gray-green: #8F9897;
+$color-dark-gray: #313131;
 
 // Line heights
 $line-height-body: 150%;
 $line-height-heading: 120%;
+$line-height-xl: 160%;
 
 // Letter spacing    
 $letter-spacing-body: 0.08px;
 $letter-spacing-h1: -0.8px;
 $letter-spacing-h2: -0.56px;
+$letter-spacing-h3: -0.24px;
+$letter-spacing-subtitle: 0.12px;
+$letter-spacing-primary: 0.16px;
+
+$btn-transition: all 0.3s ease;
 
 // Container padding
 $container-padding-mobile: 32px 16px;
 $container-padding-sm: 40px 24px;
-$container-padding-md: 64px 80px;
-$container-padding-lg: 80px 160px;
-$container-padding-xl: 96px 200px;
-$container-padding-2xl: 104px 220px;
-$container-padding-3xl: 108px 230px;
-$container-padding-4xl: 110px 235px;
+$container-padding-md: 64px 40px;
+$container-padding-lg: 80px 60px;
+$container-padding-xl: 96px 80px;
+$container-padding-2xl: 104px 100px;
+$container-padding-3xl: 108px 140px;
+$container-padding-4xl: 110px 180px;
 $container-padding-xxl: 112px 240px;

@@ -1,15 +1,15 @@
-@use '../abstracts/variables' as vars;
-@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as *; 
+@use '../abstracts/mixins' as *;
 
 h1 {
-  @include mixins.heading-h1;
-  margin-bottom: 1rem;
+  @include title-xxl; 
+  margin-bottom: 1rem; 
 }
 
 p,
 span,
 li,
 a {
-  @include mixins.body-text;
+  @include body-text;
   margin-bottom: 1rem;
 }

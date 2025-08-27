@@ -1,18 +1,55 @@
-@use '../abstracts/variables' as vars;
+@use '../abstracts/variables' as *;
+@use'../abstracts/index' as *;
 
 .text-center {
   text-align: center;
 }
 
 .text-light {
-  color: vars.$color-white;
+  color: $color-white;
 }
 
 .bg-primary {
-  background-color: vars.$color-primary;
+  background-color: $color-primary;
 }
 
-.flex-between {
+.flex-between { 
   display: flex;
   justify-content: space-between;
 }
+
+.flex-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.subtitle {
+  @include subtitle;
+}
+
+.title-xxl {
+  @include title-xxl;
+}
+
+.title-xl {
+  @include title-xl;
+}
+
+.body-text {
+  @include body-text;
+} 
+
+
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-phn {
+  @include btn-phn;
+}
+
+.btn-phn-white {
+  @include btn-phn-white;
+}
+
+

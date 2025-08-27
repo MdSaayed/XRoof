@@ -1,16 +1,19 @@
-@use '../abstracts/variables' as vars;
+@use '../abstracts/variables' as *;
 @use '../layout/breakpoints' as bp;
 
 .header {
     $self : &;
 
     &__top {
-        background: vars.$color-primary;
+        background: $color-primary;
+    }
+
+    &__container {
+        padding: 0 !important;
     }
 
     &__info-text {
-        color: vars.$color-white;
+        color: $color-white;
         margin-bottom: 0;
-
     }
 }

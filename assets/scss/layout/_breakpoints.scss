@@ -1,10 +1,55 @@
-// Breakpoints only (numeric values)
-$breakpoint-xs: 350px;
-$breakpoint-sm: 480px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1200px;
-$breakpoint-2xl: 1440px;
-$breakpoint-3xl: 1600px;
-$breakpoint-4xl: 1800px;
-$breakpoint-xxl: 1920px;
+// ================================
+// Breakpoints
+// ================================
+
+// Variables
+$xs: 350px; // extra small
+$sm: 480px; // small
+$md: 768px; // medium
+$lg: 1024px; // large
+$xl: 1200px; // extra large
+$x2l: 1440px; // 2x large
+$x3l: 1600px; // 3x large
+$x4l: 1800px; // 4x large
+$xxl: 1920px; // 5x large
+
+// Map
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    x2l: $x2l,
+    x3l: $x3l,
+    x4l: $x4l,
+    xxl: $xxl
+);
+
+// ================================
+// Mixin
+// ================================
+
+@mixin respond($breakpoint, $type: max) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if $size ==null {
+        @error "Breakpoint `#{$breakpoint}` not found in $breakpoints map.";
+    }
+
+    @if $type ==max {
+        @media (max-width: $size) {
+            @content;
+        }
+    }
+
+    @else if $type ==min {
+        @media (min-width: $size) {
+            @content;
+        }
+    }
+
+    @else {
+        @error "Type must be either 'max' or 'min'. You passed `#{$type}`.";
+    }
+}

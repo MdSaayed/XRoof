@@ -1,21 +1,18 @@
 @use '../abstracts/spacing' as sp;
+@use '../layout/breakpoints' as bp;
 
-// Map for spacing
-$spaces: (
-  0: sp.$space-0,
-  1: sp.$space-1,
-  2: sp.$space-2,
-  3: sp.$space-3,
-  4: sp.$space-4,
-  5: sp.$space-5,
-  6: sp.$space-6,
-  7: sp.$space-7,
-  8: sp.$space-8,
-  9: sp.$space-9,
-  10: sp.$space-10
-);
+// ------------------------
+// Spacing and Breakpoints
+// ------------------------
+$spaces: sp.$spaces;  
+$breakpoints: bp.$breakpoints;  
 
+// ------------------------
+// Default Margin & Padding
+// ------------------------
 @each $i, $val in $spaces {
+
+  // Margin
   .m-#{$i} {
     margin: $val;
   }
@@ -36,6 +33,7 @@ $spaces: (
     margin-right: $val;
   }
 
+  // Padding
   .p-#{$i} {
     padding: $val;
   }
@@ -56,6 +54,7 @@ $spaces: (
     padding-right: $val;
   }
 
+  // X & Y shortcuts
   .px-#{$i} {
     padding-left: $val;
     padding-right: $val;
@@ -67,16 +66,103 @@ $spaces: (
   }
 }
 
-@for $i from 1 through 15 {
+// ------------------------
+// Responsive Margin & Padding
+// ------------------------
+@each $bp-name, $bp-value in $breakpoints {
+  @each $i, $val in $spaces {
+    @media (min-width: $bp-value) {
+
+      // Margin
+      .m-#{$bp-name}-#{$i} {
+        margin: $val;
+      }
+
+      .mt-#{$bp-name}-#{$i} {
+        margin-top: $val;
+      }
+
+      .mb-#{$bp-name}-#{$i} {
+        margin-bottom: $val;
+      }
+
+      .ml-#{$bp-name}-#{$i} {
+        margin-left: $val;
+      }
+
+      .mr-#{$bp-name}-#{$i} {
+        margin-right: $val;
+      }
+
+      // Padding
+      .p-#{$bp-name}-#{$i} {
+        padding: $val;
+      }
+
+      .pt-#{$bp-name}-#{$i} {
+        padding-top: $val;
+      }
+
+      .pb-#{$bp-name}-#{$i} {
+        padding-bottom: $val;
+      }
+
+      .pl-#{$bp-name}-#{$i} {
+        padding-left: $val;
+      }
+
+      .pr-#{$bp-name}-#{$i} {
+        padding-right: $val;
+      }
+
+      // X & Y shortcuts
+      .px-#{$bp-name}-#{$i} {
+        padding-left: $val;
+        padding-right: $val;
+      }
+
+      .py-#{$bp-name}-#{$i} {
+        padding-top: $val;
+        padding-bottom: $val;
+      }
+    }
+  }
+}
+
+// ------------------------
+// Default Gaps
+// ------------------------
+@for $i from 1 through 20 {
   .gap-#{$i} {
-    gap: $i * 4px;
+    gap: ($i * 4px);
   }
 
   .gap-x-#{$i} {
-    column-gap: $i * 4px;
+    column-gap: ($i * 4px);
   }
 
   .gap-y-#{$i} {
-    row-gap: $i * 4px;
+    row-gap: ($i * 4px);
+  }
+}
+
+// ------------------------
+// Responsive Gaps
+// ------------------------
+@each $bp-name, $bp-value in $breakpoints {
+  @for $i from 1 through 20 {
+    @media (min-width: $bp-value) {
+      .gap-#{$bp-name}-#{$i} {
+        gap: ($i * 4px);
+      }
+
+      .gap-x-#{$bp-name}-#{$i} {
+        column-gap: ($i * 4px);
+      }
+
+      .gap-y-#{$bp-name}-#{$i} {
+        row-gap: ($i * 4px);
+      }
+    }
   }
 }
